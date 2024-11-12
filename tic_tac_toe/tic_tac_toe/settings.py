@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -122,3 +122,10 @@ STATICFILES_DIRS = [BASE_DIR / "game/static"]
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Allow Render to serve the app
+ALLOWED_HOSTS = ['.onrender.com']
+
+# Set the port using the environment variable
+# This will default to 8000 if no port is set (useful for local development)
+PORT = os.environ.get('PORT', '8000')
