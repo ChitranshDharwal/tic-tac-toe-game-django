@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe - Landing Page</title>
+    <link rel="stylesheet" href="{% static 'game/style.css' %}">
+</head>
+<body>
+    <div class="landing-container">
+        <h1>Welcome to Tic Tac Toe</h1>
+        <button onclick="window.location.href='{% url 'mode' %}'" class="play-btn">Play</button>
+    </div>
+</body>
+</html>

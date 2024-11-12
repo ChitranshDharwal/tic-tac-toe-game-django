@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Mode - Tic Tac Toe</title>
+    <link rel="stylesheet" href="{% static 'game/style.css' %}">
+</head>
+<body>
+    <div class="mode-container">
+        <h1>Select Game Mode</h1>
+        <button onclick="selectMode('1v1')" class="mode-btn">1v1 Mode</button>
+        <button onclick="selectMode('bot')" class="mode-btn">Bot Mode</button>
+        <script>
+            function selectMode(mode) {
+                localStorage.setItem('gameMode', mode);
+                window.location.href = "{% url 'game' %}";
+            }
+        </script>
+    </div>
+</body>
+</html>
